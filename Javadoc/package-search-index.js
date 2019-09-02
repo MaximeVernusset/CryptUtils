@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"test.vernusset.crypUtils"},{"l":"test.vernusset.crypUtils.sampleEncryptableObjects"},{"l":"vernusset.cryptUtils"},{"l":"vernusset.cryptUtils.encryptableObjects"},{"l":"vernusset.cryptUtils.exceptions"}]

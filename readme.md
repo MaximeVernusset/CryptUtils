@@ -116,7 +116,4 @@ catch (Exception e) {
 }
 ```
 
-## 5. Class Diagram
-![Class diagram](Class diagram.png)
-
 ***For more details and technical comprehension, please refer to Javadoc and unit testing class.***
