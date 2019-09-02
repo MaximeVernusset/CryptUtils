@@ -29,12 +29,12 @@ public class CrypDecryptTest {
 	/**
 	 * Symmetric algorithm to use.
 	 */
-	private final SymmetricEncryptionMethod.Algorithm SYMETRIC_ENCRYPTION_ALGO = SymmetricEncryptionMethod.Algorithm.AES_ECB_PKCS5PADDING_256;
+	private final SymmetricEncryptionMethod.SymmetricAlgorithm SYMETRIC_ENCRYPTION_ALGO = SymmetricEncryptionMethod.SymmetricAlgorithm.AES_ECB_PKCS5PADDING_256;
 
 	/**
 	 * Asymmetric algorithm to use.
 	 */
-	private final AsymmetricEncryptionMethod.Algorithm ASYMETRIC_ENCRYPTION_ALGO = AsymmetricEncryptionMethod.Algorithm.RSA_ECB_PKCS1Padding_3072;
+	private final AsymmetricEncryptionMethod.AsymmetricAlgorithm ASYMETRIC_ENCRYPTION_ALGO = AsymmetricEncryptionMethod.AsymmetricAlgorithm.RSA_ECB_PKCS1Padding_3072;
 	
 	
 	/**

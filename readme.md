@@ -76,7 +76,7 @@ Import CryptUtils jar as project dependency to be able to use it.
 ### Symmetric
 
 ```java
-SymmetricEncryptionMethod.Algorithm symmetricAlgo = SymmetricEncryptionMethod.Algorithm.AES_ECB_PKCS5PADDING_128;
+SymmetricEncryptionMethod.Algorithm symmetricAlgo = SymmetricEncryptionMethod.SymmetricAlgorithm.AES_ECB_PKCS5PADDING_128;
 //byte[] secretKey = new byte[] {'T','h','e','B','e','s','t','S','e','c','r','e','t','K','e','y'};
 EncryptableString stringToEncrypt =  new EncryptableString("String to encrypt");
 
@@ -98,7 +98,7 @@ catch (Exception e) {
 ### Asymmetric
 
 ```java
-AsymmetricEncryptionMethod.Algorithm asymmetricAlgo = AsymmetricEncryptionMethod.Algorithm.RSA_ECB_PKCS1Padding_2048;
+AsymmetricEncryptionMethod.Algorithm asymmetricAlgo = AsymmetricEncryptionMethod.AsymmetricAlgorithm.RSA_ECB_PKCS1Padding_2048;
 EncryptableString stringToEncrypt =  new EncryptableString("String to encrypt");
 
 try {
@@ -115,5 +115,8 @@ catch (Exception e) {
     e.printStackTrace();
 }
 ```
+
+## 5. Class Diagram
+![Class diagram](Class diagram.png)
 
 ***For more details and technical comprehension, please refer to Javadoc and unit testing class.***

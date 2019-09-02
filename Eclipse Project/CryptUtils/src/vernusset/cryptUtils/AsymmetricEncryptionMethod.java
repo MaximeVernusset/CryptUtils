@@ -30,7 +30,7 @@ public class AsymmetricEncryptionMethod extends EncryptionMethod {
 	 * List of supported asymmetric algorithms and their key pair size.
 	 * Only RSA supported for now.
 	 */
-	public static enum Algorithm implements EncryptionAlgorithm {
+	public static enum AsymmetricAlgorithm implements EncryptionAlgorithm {
 
 		RSA_ECB_PKCS1Padding_1024 ("RSA/ECB/PKCS1Padding", 1024),
 		RSA_ECB_PKCS1Padding_2048 ("RSA/ECB/PKCS1Padding", 2048),
@@ -45,7 +45,7 @@ public class AsymmetricEncryptionMethod extends EncryptionMethod {
 		private final String name;
 		private final int keySize;
 		
-		private Algorithm(String name, int keySize) {
+		private AsymmetricAlgorithm(String name, int keySize) {
 			this.name = name;
 			this.keySize = keySize;
 		}
@@ -92,7 +92,7 @@ public class AsymmetricEncryptionMethod extends EncryptionMethod {
 	 * @param correspondentPublicKey Public key of correspondent to be able to encrypt messages to his attention
 	 * @throws ConflictingAsymmetricEncryptionAlgorithmsException
 	 */
-	public AsymmetricEncryptionMethod(Algorithm algo, KeyPair keyPair, PublicKey correspondentPublicKey) throws ConflictingAsymmetricEncryptionAlgorithmsException  {
+	public AsymmetricEncryptionMethod(AsymmetricAlgorithm algo, KeyPair keyPair, PublicKey correspondentPublicKey) throws ConflictingAsymmetricEncryptionAlgorithmsException  {
 		super(algo);
 		
 		if(algo.getAlgo().equals(keyPair.getPublic().getAlgorithm()) && algo.getAlgo().equals(keyPair.getPrivate().getAlgorithm())) {
@@ -152,7 +152,7 @@ public class AsymmetricEncryptionMethod extends EncryptionMethod {
 	 * @param algo algorithm for which the key pair is desired
 	 * @return private/public key pair
 	 */
-	public static KeyPair buildKeyPair(Algorithm algo) {
+	public static KeyPair buildKeyPair(AsymmetricAlgorithm algo) {
 		KeyPairGenerator keyPairGen;
 		try {
 			keyPairGen = KeyPairGenerator.getInstance(algo.getAlgo());

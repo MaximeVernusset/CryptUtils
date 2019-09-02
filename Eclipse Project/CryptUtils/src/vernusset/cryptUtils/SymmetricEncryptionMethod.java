@@ -32,7 +32,7 @@ public class SymmetricEncryptionMethod extends EncryptionMethod {
 	 * List of supported symmetric algorithms and their secret key size.
 	 * Only AES supported for now.
 	 */
-	public static enum Algorithm implements EncryptionAlgorithm {
+	public static enum SymmetricAlgorithm implements EncryptionAlgorithm {
 
 		AES_ECB_PKCS5PADDING_128 ("AES/ECB/PKCS5Padding", 128),
 		AES_ECB_PKCS5PADDING_192 ("AES/ECB/PKCS5Padding", 192),
@@ -41,7 +41,7 @@ public class SymmetricEncryptionMethod extends EncryptionMethod {
 		private final String name;
 		private final int keySize;
 		
-		private Algorithm(String name, int keySize) {
+		private SymmetricAlgorithm(String name, int keySize) {
 			this.name = name;
 			this.keySize = keySize;
 		}
@@ -80,7 +80,7 @@ public class SymmetricEncryptionMethod extends EncryptionMethod {
 	 * @param key bytes array secret key
 	 * @throws WrongSymmetricKeySizeException 
 	 */
-	public SymmetricEncryptionMethod(Algorithm algo, byte[] key) throws WrongSymmetricKeySizeException  {
+	public SymmetricEncryptionMethod(SymmetricAlgorithm algo, byte[] key) throws WrongSymmetricKeySizeException  {
   		super(algo);
 		if(key.length*8 == algo.getKeySize()) { //Bytes to bits
   			this.key = new SecretKeySpec(key, algo.getAlgo());
@@ -96,7 +96,7 @@ public class SymmetricEncryptionMethod extends EncryptionMethod {
 	 * @throws ConflictingSymmetricEncryptionAlgorithmsException 
 	 * @throws WrongSymmetricKeySizeException 
 	 */
-	public SymmetricEncryptionMethod(Algorithm algo, SecretKey key) throws ConflictingSymmetricEncryptionAlgorithmsException, WrongSymmetricKeySizeException  {
+	public SymmetricEncryptionMethod(SymmetricAlgorithm algo, SecretKey key) throws ConflictingSymmetricEncryptionAlgorithmsException, WrongSymmetricKeySizeException  {
   		super(algo);
 		if(key.getEncoded().length*8 == algo.getKeySize()) { //Bytes to bits
 			if(key.getAlgorithm().contentEquals(algo.getAlgo())) {
@@ -114,7 +114,7 @@ public class SymmetricEncryptionMethod extends EncryptionMethod {
 	 * @param algo algorithm for which the secret key is desired
 	 * @return private/public key pair
 	 */
-	public static SecretKey buildSecretKey(Algorithm algo) {
+	public static SecretKey buildSecretKey(SymmetricAlgorithm algo) {
 		KeyGenerator keyGen;
 		try {
 			keyGen = KeyGenerator.getInstance(algo.getAlgo());
