@@ -1,4 +1,4 @@
-package test.vernusset.crypUtils.sampleEncryptableObjects;
+package test.vernusset.cryptUtils.sampleEncryptableObjects;
 
 import vernusset.cryptUtils.encryptableObjects.Encryptable;
 

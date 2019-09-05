@@ -1,12 +1,15 @@
-package test.vernusset.crypUtils;
+package test.vernusset.cryptUtils;
 
 import java.security.KeyPair;
 import java.util.Base64;
 
 import javax.crypto.SecretKey;
 
-import test.vernusset.crypUtils.sampleEncryptableObjects.*;
-import vernusset.cryptUtils.*;
+import test.vernusset.cryptUtils.sampleEncryptableObjects.*;
+import vernusset.cryptUtils.AsymmetricEncryptionMethod;
+import vernusset.cryptUtils.EncryptionAlgorithm;
+import vernusset.cryptUtils.EncryptionMethod;
+import vernusset.cryptUtils.SymmetricEncryptionMethod;
 import vernusset.cryptUtils.encryptableObjects.*;
 
 
@@ -15,7 +18,7 @@ import vernusset.cryptUtils.encryptableObjects.*;
  * @author Maxime VERNUSSET
  *
  */
-public class CrypDecryptTest {
+public class CryptDecryptTest {
 	
 	private enum EncryptionMode {
 		SYMETRIC, ASYMETRIC;
@@ -52,7 +55,7 @@ public class CrypDecryptTest {
 	 * Constructor. 
 	 * Builds symmetric and asymmetric keys used for testing.
 	 */
-	public CrypDecryptTest() {
+	public CryptDecryptTest() {
 		System.out.println("Building test encryption keys...");
 
 		//Symmetric key
@@ -175,6 +178,6 @@ public class CrypDecryptTest {
 	 * @param args not used
 	 */
 	public static void main(String[] args) {
-		(new CrypDecryptTest()).run();
+		(new CryptDecryptTest()).run();
 	}	
 }
