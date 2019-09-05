@@ -76,9 +76,9 @@ Import CryptUtils jar as project dependency to be able to use it.
 ### Symmetric
 
 ```java
-SymmetricEncryptionMethod.Algorithm symmetricAlgo = SymmetricEncryptionMethod.SymmetricAlgorithm.AES_ECB_PKCS5PADDING_128;
+SymmetricEncryptionMethod.SymmetricAlgorithm symmetricAlgo = SymmetricEncryptionMethod.SymmetricAlgorithm.AES_ECB_PKCS5PADDING_128;
 //byte[] secretKey = new byte[] {'T','h','e','B','e','s','t','S','e','c','r','e','t','K','e','y'};
-EncryptableString stringToEncrypt =  new EncryptableString("String to encrypt");
+EncryptableString stringToEncrypt = new EncryptableString("String to encrypt");
 
 try {
     SecretKey secretKey = SymmetricEncryptionMethod.buildSecretKey(symmetricAlgo);
@@ -98,8 +98,8 @@ catch (Exception e) {
 ### Asymmetric
 
 ```java
-AsymmetricEncryptionMethod.Algorithm asymmetricAlgo = AsymmetricEncryptionMethod.AsymmetricAlgorithm.RSA_ECB_PKCS1Padding_2048;
-EncryptableString stringToEncrypt =  new EncryptableString("String to encrypt");
+AsymmetricEncryptionMethod.AsymmetricAlgorithm asymmetricAlgo = AsymmetricEncryptionMethod.AsymmetricAlgorithm.RSA_ECB_PKCS1Padding_2048;
+EncryptableString stringToEncrypt = new EncryptableString("String to encrypt");
 
 try {
     KeyPair keyPair = AsymmetricEncryptionMethod.buildKeyPair(asymmetricAlgo);
